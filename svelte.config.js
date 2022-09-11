@@ -1,7 +1,8 @@
 // svelte.config.js
 import adapter from '@sveltejs/adapter-static';
 
-export default {
+/** @type {import('@sveltejs/kit').Config} */
+const config  = {
 	kit: {
 		adapter: adapter({
 			// default options are shown. On some platforms
@@ -10,6 +11,9 @@ export default {
 			assets: 'build',
 			fallback: null,
 			precompress: false
-		})
+		}),
+		trailingSlash: 'always'
 	}
 };
+
+export default config;
